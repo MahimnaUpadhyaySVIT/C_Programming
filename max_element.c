@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void main(){
+int main(){
     int one_d[5], i, max;
 
     printf("Enter the elements in a Array: \n");
@@ -24,4 +24,6 @@ void main(){
     }
 
     printf("The highest element in a array is: %d \n", max);
+
+    return 0;
 }
