@@ -1,17 +1,30 @@
 #include <stdio.h>
 
+int recursion_factorial(int);
+
 void main(){
-    int number, range, i, factorial=1;
+	int number, result;
 
-    printf("Enter the range: ");
-    scanf("%d", &range);
+	printf("Enter a number to find a factorial: ");
+	scanf("%d", &number);
+	
+	if(number < 0){
+		printf("Non negative number is not allowed");
+	} else {
+		result = recursion_factorial(number);
+		printf("The factorial of %d is %d \n", number, result);
+	}
 
-    printf("Enter the number: ");
-    scanf("%d", &number);
+}
 
-    for(i=0; i<range; i--){
-        factorial = factorial * number;
-    }
+int recursion_factorial(int number){
+	
+	int factorial=1, i;
 
-    printf("The factorial of a %d is %d", number, factorial);
+	if(number == 0 || number == 1){
+		return 1;
+	}
+
+	return factorial *= recursion_factorial(number - 1);
+
 }
